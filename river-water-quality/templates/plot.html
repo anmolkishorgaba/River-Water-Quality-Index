@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <div class="navbar">
+    <div class="dropdown">
+        <form method="post">
+            <select name='para' onchange='if(this.value != 0) { this.form.submit(); }'>
+                 <option value='temp'>Temprature</option>
+                 <option value='do'>Dissolved Oxygen</option>
+                 <option value='ph'>pH</option>
+                 <option value='cond'>Conductivity</option>
+                 <option value='bod'>Biochemical oxygen demand</option>
+                 <option value='nit'>Nitrate</option>
+                 <option value='fcol'>Faecal coliform</option>
+                 <option value='tcol'>Total Coliform</option>
+            </select>
+        </form>
+      </div>
+    </div>
+  </div>
+</head>
+
+<body>
+<h1>Here's a Plotly graph!</h1>
+<div id="chart" class="chart"></div>
+<p>And here's some text after the graph.</p>
+</body>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+    var graphs = {{fig | safe}};
+    Plotly.plot('chart',graphs,{});        
+</script>
+</html>
